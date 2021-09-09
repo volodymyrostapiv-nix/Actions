@@ -29,7 +29,7 @@ jobs:
       - uses: creyD/prettier_action@v4.0
       # Commits back 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply formatting changes
           branch: ${{ github.head_ref }}
