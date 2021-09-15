@@ -10,12 +10,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.PACKAGE, ElementType.TYPE})
 @Retention(RetentionPolicy.CLASS) // Make it class retention for incremental compilation
 @Value.Style(
-        typeAbstract = "*IF",
-        typeImmutable = "*",
-        redactedMask = " #redacted# ",
-        stagedBuilder = true,
-        depluralize = true,
-        strictBuilder = false
-)
-public @interface CPStyle {
-}
+    typeAbstract = "*IF",
+    typeImmutable = "*",
+    redactedMask = " #redacted# ",
+    stagedBuilder = true,
+    depluralize = true,
+    strictBuilder = false)
+public @interface CPStyle {}

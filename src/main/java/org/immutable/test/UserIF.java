@@ -6,29 +6,28 @@ import java.util.Optional;
 
 @Value.Immutable
 @Value.Style(
-        typeAbstract = "*IF",
-        typeImmutable = "*",
-        redactedMask = " #redacted# ",
-        defaultAsDefault = true
-)
+    typeAbstract = "*IF",
+    typeImmutable = "*",
+    redactedMask = " #redacted# ",
+    defaultAsDefault = true)
 public interface UserIF {
-    @Value.Parameter
-    String getUsername();
+  @Value.Parameter
+  String getUsername();
 
-    @Value.Redacted
-    @Value.Parameter
-    String getPassword();
+  @Value.Redacted
+  @Value.Parameter
+  String getPassword();
 
-    // @Value.Default not needed due to defaultAsDefault = true
-    default String getAvatarPath() {
-        return "htttp://avatars/default.jpg";
-    }
+  // @Value.Default not needed due to defaultAsDefault = true
+  default String getAvatarPath() {
+    return "htttp://avatars/default.jpg";
+  }
 
-    @Value.Auxiliary
-    Optional<Integer> getSalt();
+  @Value.Auxiliary
+  Optional<Integer> getSalt();
 
-    @Value.Check
-    default void check() {
-        if (getPassword().contains("qwert")) throw new RuntimeException("The password is too simple!");
-    }
+  @Value.Check
+  default void check() {
+    if (getPassword().contains("qwert")) throw new RuntimeException("The password is too simple!");
+  }
 }
