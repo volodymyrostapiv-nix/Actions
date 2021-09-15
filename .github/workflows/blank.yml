@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 # v2 minimum required
-      - uses: axel-op/googlejavaformat-action@v3
+      - uses: zbeekman/EditorConfig-Action@v1.1.1
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          args: "--skip-sorting-imports --replace"
+          commit_message: Apply .editorconfig changes
+
 
