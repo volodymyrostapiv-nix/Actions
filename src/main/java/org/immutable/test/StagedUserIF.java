@@ -1,7 +1,7 @@
 package org.immutable.test;
 
-import org.immutables.value.Value;
 import java.util.List;
+import org.immutables.value.Value;
 
 @Value.Immutable
 @Value.Style(typeAbstract = "*IF", typeImmutable = "*", stagedBuilder = true, depluralize = true)

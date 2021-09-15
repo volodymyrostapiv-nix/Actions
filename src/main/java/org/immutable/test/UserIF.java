@@ -1,8 +1,7 @@
 package org.immutable.test;
 
-import org.immutables.value.Value;
-
 import java.util.Optional;
+import org.immutables.value.Value;
 
 @Value.Immutable
 @Value.Style(
