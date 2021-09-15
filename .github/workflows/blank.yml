@@ -13,24 +13,13 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  formatting:
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      # Formats with prettier
-      - name: Prettier Action
-      - uses: creyD/prettier_action@v4.0
-      # Commits back 
-      - name: Commit changes
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: actions/checkout@v2 # v2 minimum required
+      - uses: axel-op/googlejavaformat-action@v3
         with:
-          commit_message: Apply formatting changes
-          branch: ${{ github.head_ref }}
+          args: "--skip-sorting-imports --replace"
 
